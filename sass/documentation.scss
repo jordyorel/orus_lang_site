@@ -1,0 +1,167 @@
+/* Documentation page specific styles */
+
+/* Side navigation */
+.docs-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: var(--space-xl);
+}
+
+.docs-sidebar {
+    position: sticky;
+    top: calc(var(--header-height) + var(--space-md));
+    height: calc(100vh - var(--header-height) - var(--space-md) * 2);
+    overflow-y: auto;
+    padding-right: var(--space-md);
+}
+
+.docs-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.docs-menu-section {
+    margin-bottom: var(--space-md);
+}
+
+.docs-menu-title {
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: var(--space-xs);
+    display: block;
+}
+
+.docs-menu-items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-left: var(--space-sm);
+}
+
+.docs-menu-item {
+    margin-bottom: var(--space-xs);
+}
+
+.docs-menu-link {
+    display: block;
+    padding: var(--space-xs) var(--space-sm);
+    color: var(--text-light);
+    text-decoration: none;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+}
+
+.docs-menu-link:hover, .docs-menu-link.active {
+    color: var(--primary);
+    background-color: rgba(177, 151, 91, 0.1);
+}
+
+/* Table of contents */
+.docs-toc {
+    position: sticky;
+    top: calc(var(--header-height) + var(--space-md));
+    max-height: calc(100vh - var(--header-height) - var(--space-md) * 2);
+    overflow-y: auto;
+    padding: var(--space-md);
+    border-left: 1px solid var(--border);
+    font-size: 0.9rem;
+}
+
+.toc-title {
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+}
+
+.toc-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.toc-item {
+    margin-bottom: var(--space-xs);
+}
+
+.toc-link {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.toc-link:hover {
+    color: var(--primary);
+}
+
+/* Documentation content */
+.docs-content {
+    max-width: 800px;
+}
+
+.docs-content h2 {
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid var(--border);
+}
+
+.docs-content h3 {
+    margin-top: var(--space-lg);
+}
+
+.docs-content pre {
+    margin: var(--space-md) 0;
+}
+
+/* Documentation navigation */
+.docs-navigation {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+    margin-top: var(--space-xl);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--border);
+}
+
+.docs-navigation a {
+    padding: var(--space-md);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.docs-navigation a:hover {
+    border-color: var(--primary);
+    background-color: rgba(177, 151, 91, 0.05);
+}
+
+.docs-navigation .prev {
+    grid-column: 1;
+}
+
+.docs-navigation .next {
+    grid-column: 2;
+    text-align: right;
+}
+
+.docs-navigation span {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: var(--space-xs);
+}
+
+@media (max-width: 992px) {
+    .docs-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .docs-sidebar {
+        display: none;
+    }
+    
+    .docs-toc {
+        display: none;
+    }
+}

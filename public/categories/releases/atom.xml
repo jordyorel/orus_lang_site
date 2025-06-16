@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>The Orus Programming Language - Releases</title>
+    <subtitle>Orus is a modern programming language focused on performance, reliability, and developer productivity.</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://orus-lang.org/categories/releases/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://orus-lang.org"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2025-06-15T00:00:00+00:00</updated>
+    <id>https://orus-lang.org/categories/releases/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Announcing Orus 0.1.0</title>
+        <published>2025-06-15T00:00:00+00:00</published>
+        <updated>2025-06-15T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://orus-lang.org/blog/release/"/>
+        <id>https://orus-lang.org/blog/release/</id>
+        
+        <content type="html" xml:base="https://orus-lang.org/blog/release/">&lt;h1 id=&quot;announcing-orus-0-1-0&quot;&gt;Announcing Orus 0.1.0&lt;&#x2F;h1&gt;
+&lt;p&gt;We&#x27;re excited to announce the first public release of the Orus programming language! After months of development, Orus 0.1.0 is now available for developers to try out.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-is-orus&quot;&gt;What is Orus?&lt;&#x2F;h2&gt;
+&lt;p&gt;Orus is a modern programming language designed with three primary goals:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Performance&lt;&#x2F;strong&gt;: Orus is designed for speed, with a focus on efficient compilation and runtime performance.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Reliability&lt;&#x2F;strong&gt;: Strong typing, memory safety without garbage collection, and a clear error handling system.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Developer Productivity&lt;&#x2F;strong&gt;: Expressive syntax, powerful abstractions, and excellent tooling.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;key-features-in-0-1-0&quot;&gt;Key Features in 0.1.0&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Core language syntax and semantics&lt;&#x2F;li&gt;
+&lt;li&gt;Basic standard library&lt;&#x2F;li&gt;
+&lt;li&gt;Compiler with helpful error messages&lt;&#x2F;li&gt;
+&lt;li&gt;Simple build system&lt;&#x2F;li&gt;
+&lt;li&gt;Documentation and getting started guides&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;example&quot;&gt;Example&lt;&#x2F;h2&gt;
+&lt;p&gt;Here&#x27;s a simple example of Orus code:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;orus&quot; style=&quot;background-color:#282a36;color:#f8f8f2;&quot; class=&quot;language-orus &quot;&gt;&lt;code class=&quot;language-orus&quot; data-lang=&quot;orus&quot;&gt;&lt;span&gt;&#x2F;&#x2F; A simple function to calculate fibonacci numbers
+&lt;&#x2F;span&gt;&lt;span&gt;fn fibonacci(n: u64) -&amp;gt; u64 {
+&lt;&#x2F;span&gt;&lt;span&gt;    if n &amp;lt;= 1 {
+&lt;&#x2F;span&gt;&lt;span&gt;        return n;
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;    return fibonacci(n - 1) + fibonacci(n - 2);
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;fn main() {
+&lt;&#x2F;span&gt;&lt;span&gt;    &#x2F;&#x2F; Calculate and print the first 10 fibonacci numbers
+&lt;&#x2F;span&gt;&lt;span&gt;    for i in 0..10 {
+&lt;&#x2F;span&gt;&lt;span&gt;        println(&amp;quot;fibonacci({}) = {}&amp;quot;, i, fibonacci(i));
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;getting-started&quot;&gt;Getting Started&lt;&#x2F;h2&gt;
+&lt;p&gt;To try Orus today, visit our &lt;a href=&quot;&#x2F;install&#x2F;&quot;&gt;installation page&lt;&#x2F;a&gt; for instructions on getting set up, then check out the &lt;a href=&quot;&#x2F;learn&#x2F;&quot;&gt;learn section&lt;&#x2F;a&gt; for tutorials and examples.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;looking-ahead&quot;&gt;Looking Ahead&lt;&#x2F;h2&gt;
+&lt;p&gt;This is just the beginning for Orus. Our roadmap for upcoming releases includes:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Advanced concurrency features&lt;&#x2F;li&gt;
+&lt;li&gt;Improved package management&lt;&#x2F;li&gt;
+&lt;li&gt;More comprehensive standard library&lt;&#x2F;li&gt;
+&lt;li&gt;IDE integration and debugging tools&lt;&#x2F;li&gt;
+&lt;li&gt;Performance optimizations&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;join-the-community&quot;&gt;Join the Community&lt;&#x2F;h2&gt;
+&lt;p&gt;We&#x27;re building Orus in the open and welcome contributions from everyone. Join us on &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;orus-lang&#x2F;orus&quot;&gt;GitHub&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;discord.gg&#x2F;oruslang&quot;&gt;Discord&lt;&#x2F;a&gt;, or &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;oruslang&quot;&gt;Twitter&lt;&#x2F;a&gt; to get involved.&lt;&#x2F;p&gt;
+&lt;p&gt;We can&#x27;t wait to see what you&#x27;ll build with Orus!&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

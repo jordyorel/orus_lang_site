@@ -1,0 +1,62 @@
+{% extends "page.html" %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{{ get_url(path='css/learn.css') }}">
+<link rel="stylesheet" href="{{ get_url(path='css/tutorial.css') }}">
+<link rel="stylesheet" href="{{ get_url(path='css/tutorial-sidebar.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+{% endblock extra_head %}
+
+{% block content %}
+<!-- Left sidebar navigation -->
+<div class="sidebar">
+    <!-- Resize handle -->
+    <div class="sidebar-resize-handle"></div>
+    
+    <div class="sidebar-content">
+        <div class="sidebar-section">
+            <div class="sidebar-title">Tutorial</div>
+            <ul class="sidebar-nav">
+                <li {% if page.path is containing("hello-world") %}class="active"{% endif %}><a href="/tutorial/hello-world/">Hello World</a></li>
+                <li {% if page.path is containing("variables-and-types") %}class="active"{% endif %}><a href="/tutorial/variables-and-types/">Variables and Types</a></li>
+                <li {% if page.path is containing("control-flow") %}class="active"{% endif %}><a href="/tutorial/control-flow/">Control Flow</a></li>
+                <li {% if page.path is containing("functions") %}class="active"{% endif %}><a href="/tutorial/functions/">Functions</a></li>
+                <li {% if page.path is containing("structs") %}class="active"{% endif %}><a href="/tutorial/structs/">Structs</a></li>
+                <li {% if page.path is containing("modules-and-imports") %}class="active"{% endif %}><a href="/tutorial/modules-and-imports/">Modules and Imports</a></li>
+                <li {% if page.path is containing("generics") %}class="active"{% endif %}><a href="/tutorial/generics/">Generics</a></li>
+                <li {% if page.path is containing("pattern-matching") %}class="active"{% endif %}><a href="/tutorial/pattern-matching/">Pattern Matching</a></li>
+                <li {% if page.path is containing("error-handling") %}class="active"{% endif %}><a href="/tutorial/error-handling/">Error Handling</a></li>
+                <li {% if page.path is containing("built-in-helpers") %}class="active"{% endif %}><a href="/tutorial/built-in-helpers/">Built-in Helpers</a></li>
+                <li {% if page.path is containing("creating-a-project") %}class="active"{% endif %}><a href="/tutorial/creating-a-project/">Creating a Project</a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-title">References</div>
+            <ul class="sidebar-nav">
+                <li><a href="/documentation/">API Documentation</a></li>
+                <li><a href="/learn/">Learning Resources</a></li>
+                <li><a href="/community/">Get Help</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Sidebar toggle button (works for both mobile and desktop) -->
+<button class="sidebar-toggle" title="Toggle navigation menu">
+    <i class="fas fa-bars"></i>
+</button>
+
+<!-- Main content with sidebar -->
+<div class="main-with-sidebar">
+    <div class="page-container tutorial-page">
+        <div class="container">
+            <div class="page-content tutorial-content">
+                {{ page.content | safe }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{{ get_url(path='js/tutorial-sidebar.js') }}"></script>
+{% endblock content %}

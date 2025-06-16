@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Orus Programming Language</title>
+    <meta name="description" content="Orus is a modern programming language focused on performance, reliability, and developer productivity.">
+    <link rel="stylesheet" href="https://orus-lang.org/css/main.css">
+    <link rel="stylesheet" href="https://orus-lang.org/css/syntax-highlighting.css">
+    <link rel="icon" type="image/png" href="https://orus-lang.org/images/favicon.png">
+    
+<link rel="stylesheet" href="https://orus-lang.org/css/learn.css">
+<link rel="stylesheet" href="https://orus-lang.org/css/tutorial.css">
+<link rel="stylesheet" href="https://orus-lang.org/css/tutorial-sidebar.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="https:&#x2F;&#x2F;orus-lang.org">
+                    <img src="https://orus-lang.org/images/orus.png" alt="Orus Logo">
+                    <span>Orus</span>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="https://orus-lang.org/install">Install</a></li>
+                    <li><a href="https://orus-lang.org/learn">Learn</a></li>
+                    <li><a href="https://orus-lang.org/documentation">Docs</a></li>
+                    <li><a href="https://orus-lang.org/playground">Playground</a></li>
+                    <li><a href="https://orus-lang.org/blog">Blog</a></li>
+                    <li><a href="https://orus-lang.org/community">Community</a></li>
+                </ul>
+            </nav>
+            <div class="tools">
+                <a href="https://github.com/orus-lang/orus" class="github-link">
+                    <img src="https://orus-lang.org/images/github-logo.svg" alt="GitHub">
+                </a>
+                <button class="search-button">
+                    <img src="https://orus-lang.org/images/search.svg" alt="Search">
+                </button>
+            </div>
+        </div>
+    </header>
+    <main style="width: 100%;">
+        
+<!-- Left sidebar navigation -->
+<div class="sidebar">
+    <!-- Resize handle -->
+    <div class="sidebar-resize-handle"></div>
+    
+    <div class="sidebar-content">
+        <div class="sidebar-section">
+            <div class="sidebar-title">Tutorial</div>
+            <ul class="sidebar-nav">
+                <li ><a href="/tutorial/hello-world/">Hello World</a></li>
+                <li ><a href="/tutorial/variables-and-types/">Variables and Types</a></li>
+                <li ><a href="/tutorial/control-flow/">Control Flow</a></li>
+                <li class="active"><a href="/tutorial/functions/">Functions</a></li>
+                <li ><a href="/tutorial/structs/">Structs</a></li>
+                <li ><a href="/tutorial/modules-and-imports/">Modules and Imports</a></li>
+                <li ><a href="/tutorial/generics/">Generics</a></li>
+                <li ><a href="/tutorial/pattern-matching/">Pattern Matching</a></li>
+                <li ><a href="/tutorial/error-handling/">Error Handling</a></li>
+                <li ><a href="/tutorial/built-in-helpers/">Built-in Helpers</a></li>
+                <li ><a href="/tutorial/creating-a-project/">Creating a Project</a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-title">References</div>
+            <ul class="sidebar-nav">
+                <li><a href="/documentation/">API Documentation</a></li>
+                <li><a href="/learn/">Learning Resources</a></li>
+                <li><a href="/community/">Get Help</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Sidebar toggle button (works for both mobile and desktop) -->
+<button class="sidebar-toggle" title="Toggle navigation menu">
+    <i class="fas fa-bars"></i>
+</button>
+
+<!-- Main content with sidebar -->
+<div class="main-with-sidebar">
+    <div class="page-container tutorial-page">
+        <div class="container">
+            <div class="page-content tutorial-content">
+                <h1 id="functions">Functions</h1>
+<p>Functions return the last expression implicitly:</p>
+<pre data-lang="orus" style="background-color:#282a36;color:#f8f8f2;" class="language-orus "><code class="language-orus" data-lang="orus"><span>fn add(a: i32, b: i32) -&gt; i32 {
+</span><span>    a + b
+</span><span>}
+</span></code></pre>
+<p>Alternatively, use an explicit <code>return</code>:</p>
+<pre data-lang="orus" style="background-color:#282a36;color:#f8f8f2;" class="language-orus "><code class="language-orus" data-lang="orus"><span>fn add(a: i32, b: i32) -&gt; i32 {
+</span><span>    return a + b
+</span><span>}
+</span></code></pre>
+<p>Functions with no return value can omit the return type:</p>
+<pre data-lang="orus" style="background-color:#282a36;color:#f8f8f2;" class="language-orus "><code class="language-orus" data-lang="orus"><span>fn greet(name: string) {
+</span><span>    print(&quot;Hello, &quot; + name + &quot;!&quot;)
+</span><span>}
+</span></code></pre>
+<p>You can define functions that take multiple parameters and have complex logic:</p>
+<pre data-lang="orus" style="background-color:#282a36;color:#f8f8f2;" class="language-orus "><code class="language-orus" data-lang="orus"><span>fn max(a: i32, b: i32) -&gt; i32 {
+</span><span>    if a &gt; b {
+</span><span>        return a
+</span><span>    }
+</span><span>    return b
+</span><span>}
+</span></code></pre>
+<p>Functions in Orus are first-class citizens, which means you can assign them to variables and pass them as arguments:</p>
+<pre data-lang="orus" style="background-color:#282a36;color:#f8f8f2;" class="language-orus "><code class="language-orus" data-lang="orus"><span>fn apply(func: (i32, i32) -&gt; i32, a: i32, b: i32) -&gt; i32 {
+</span><span>    return func(a, b)
+</span><span>}
+</span><span>
+</span><span>fn main() {
+</span><span>    let result = apply(add, 5, 3)
+</span><span>    print(result) // Prints: 8
+</span><span>}
+</span></code></pre>
+<div class="tutorial-navigation">
+    <a href="/tutorial/control-flow/" class="nav-button prev">Previous: Control Flow</a>
+    <a href="/tutorial/structs/" class="nav-button next">Next: Structs</a>
+</div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://orus-lang.org/js/tutorial-sidebar.js"></script>
+
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="https://orus-lang.org/learn">Getting Started</a></li>
+                        <li><a href="https://orus-lang.org/documentation">Documentation</a></li>
+                        <li><a href="https://orus-lang.org/playground">Playground</a></li>
+                        <li><a href="https://orus-lang.org/blog">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Community</h3>
+                    <ul>
+                        <li><a href="https://github.com/orus-lang/orus">GitHub</a></li>
+                        <li><a href="https://discord.gg/oruslang">Discord</a></li>
+                        <li><a href="https://twitter.com/oruslang">Twitter</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Policies</h3>
+                    <ul>
+                        <li><a href="https://orus-lang.org/policies/code-of-conduct">Code of Conduct</a></li>
+                        <li><a href="https://orus-lang.org/policies/privacy">Privacy Policy</a></li>
+                        <li><a href="https://orus-lang.org/policies/security">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 The Orus Language Project</p>
+                <p>Orus is an open source project.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://orus-lang.org/js/main.js"></script>
+    <script src="https://orus-lang.org/js/prism-orus.js"></script>
+    
+</body>
+</html>

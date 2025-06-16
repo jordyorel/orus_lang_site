@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Orus Programming Language</title>
+    <meta name="description" content="Orus is a modern programming language focused on performance, reliability, and developer productivity.">
+    <link rel="stylesheet" href="https://orus-lang.org/css/main.css">
+    <link rel="stylesheet" href="https://orus-lang.org/css/syntax-highlighting.css">
+    <link rel="icon" type="image/png" href="https://orus-lang.org/images/favicon.png">
+    
+<link rel="stylesheet" href="https://orus-lang.org/css/learn.css">
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="https:&#x2F;&#x2F;orus-lang.org">
+                    <img src="https://orus-lang.org/images/orus.png" alt="Orus Logo">
+                    <span>Orus</span>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="https://orus-lang.org/install">Install</a></li>
+                    <li><a href="https://orus-lang.org/learn">Learn</a></li>
+                    <li><a href="https://orus-lang.org/documentation">Docs</a></li>
+                    <li><a href="https://orus-lang.org/playground">Playground</a></li>
+                    <li><a href="https://orus-lang.org/blog">Blog</a></li>
+                    <li><a href="https://orus-lang.org/community">Community</a></li>
+                </ul>
+            </nav>
+            <div class="tools">
+                <a href="https://github.com/orus-lang/orus" class="github-link">
+                    <img src="https://orus-lang.org/images/github-logo.svg" alt="GitHub">
+                </a>
+                <button class="search-button">
+                    <img src="https://orus-lang.org/images/search.svg" alt="Search">
+                </button>
+            </div>
+        </div>
+    </header>
+    <main style="width: 100%;">
+        
+<div class="page-container">
+    <div class="container">
+        <div class="page-content">
+            <h1 id="learn-orus">Learn Orus</h1>
+<p>Welcome to the Orus learning materials. Whether you're new to programming or coming from another language, these resources will help you start writing Orus code.</p>
+<div class="learn-options">
+    <a href="/tutorial/" class="learn-card">
+        <h3>Full Orus Tutorial</h3>
+        <p>A comprehensive step-by-step guide to learning Orus from the basics to advanced concepts</p>
+    </a>
+    <a href="/playground/" class="learn-card">
+        <h3>Online Playground</h3>
+        <p>Try Orus in your browser without installing anything, with live code execution and examples</p>
+    </a>
+</div>
+<h2 id="first-steps-with-orus">First Steps with Orus</h2>
+<h3 id="hello-world">Hello World</h3>
+<p>Create a file called <code>hello.orus</code> with the following content:</p>
+<pre data-lang="orus" style="background-color:#282a36;color:#f8f8f2;" class="language-orus "><code class="language-orus" data-lang="orus"><span>fn main() {
+</span><span>    println(&quot;Hello, Orus World!&quot;);
+</span><span>}
+</span></code></pre>
+<p>Compile and run it:</p>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#50fa7b;">orus</span><span> build hello.orus
+</span><span style="color:#50fa7b;">orusc</span><span> hello.orus
+</span></code></pre>
+<h3 id="basic-concepts">Basic Concepts</h3>
+<h4 id="variables-and-types">Variables and Types</h4>
+<pre data-lang="orus" style="background-color:#282a36;color:#f8f8f2;" class="language-orus "><code class="language-orus" data-lang="orus"><span>fn main() {
+</span><span>    // Type inference
+</span><span>    let name = &quot;Orus&quot;;
+</span><span>    
+</span><span>    // Explicit typing
+</span><span>    let age: i32 = 1;
+</span><span>    
+</span><span>    // Constants
+</span><span>    const VERSION: f32 = 0.1;
+</span><span>    
+</span><span>    println(&quot;Language: {}, Age: {}, Version: {}&quot;, name, age, VERSION);
+</span><span>}
+</span></code></pre>
+<h4 id="functions">Functions</h4>
+<pre data-lang="orus" style="background-color:#282a36;color:#f8f8f2;" class="language-orus "><code class="language-orus" data-lang="orus"><span>// Basic function
+</span><span>fn add(a: i32, b: i32) -&gt; i32 {
+</span><span>    return a + b;
+</span><span>}
+</span><span>
+</span><span>// Function with multiple return values
+</span><span>fn divide_remainder(dividend: i32, divisor: i32) -&gt; (i32, i32) {
+</span><span>    let quotient = dividend / divisor;
+</span><span>    let remainder = dividend % divisor;
+</span><span>    return (quotient, remainder);
+</span><span>}
+</span><span>
+</span><span>fn main() {
+</span><span>    let sum = add(5, 7);
+</span><span>    let (quotient, remainder) = divide_remainder(10, 3);
+</span><span>    
+</span><span>    println(&quot;Sum: {}&quot;, sum);
+</span><span>    println(&quot;Quotient: {}, Remainder: {}&quot;, quotient, remainder);
+</span><span>}
+</span></code></pre>
+<h2 id="learning-resources">Learning Resources</h2>
+<ul>
+<li><a href="/docs/book/">The Orus Book</a>: A comprehensive guide to the Orus programming language</li>
+<li><a href="/learn/by-example/">Orus by Example</a>: Learn Orus through practical examples</li>
+<li><a href="/docs/std/">Standard Library Documentation</a>: Reference for Orus's standard library</li>
+<li><a href="/learn/cookbook/">Orus Cookbook</a>: Recipes for common programming tasks in Orus</li>
+</ul>
+<h2 id="going-further">Going Further</h2>
+<ul>
+<li><a href="/learn/effective-orus/">Effective Orus</a>: Best practices for writing idiomatic Orus code</li>
+<li><a href="/learn/concurrency/">Concurrency in Orus</a>: Working with threads, async/await, and parallelism</li>
+<li><a href="/learn/memory/">Memory Management</a>: Understanding Orus's memory model and optimizations</li>
+</ul>
+
+        </div>
+    </div>
+</div>
+
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="https://orus-lang.org/learn">Getting Started</a></li>
+                        <li><a href="https://orus-lang.org/documentation">Documentation</a></li>
+                        <li><a href="https://orus-lang.org/playground">Playground</a></li>
+                        <li><a href="https://orus-lang.org/blog">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Community</h3>
+                    <ul>
+                        <li><a href="https://github.com/orus-lang/orus">GitHub</a></li>
+                        <li><a href="https://discord.gg/oruslang">Discord</a></li>
+                        <li><a href="https://twitter.com/oruslang">Twitter</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Policies</h3>
+                    <ul>
+                        <li><a href="https://orus-lang.org/policies/code-of-conduct">Code of Conduct</a></li>
+                        <li><a href="https://orus-lang.org/policies/privacy">Privacy Policy</a></li>
+                        <li><a href="https://orus-lang.org/policies/security">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 The Orus Language Project</p>
+                <p>Orus is an open source project.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://orus-lang.org/js/main.js"></script>
+    <script src="https://orus-lang.org/js/prism-orus.js"></script>
+    
+</body>
+</html>

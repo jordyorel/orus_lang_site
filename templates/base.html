@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="{% if lang %}{{ lang }}{% else %}en{% endif %}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+    <meta name="description" content="{% block description %}{{ config.description }}{% endblock description %}">
+    <link rel="stylesheet" href="{{ get_url(path='css/main.css') }}">
+    <link rel="stylesheet" href="{{ get_url(path='css/syntax-highlighting.css') }}">
+    <link rel="icon" type="image/png" href="{{ get_url(path='images/favicon.png') }}">
+    {% block extra_head %}{% endblock extra_head %}
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="{{ config.base_url }}">
+                    <img src="{{ get_url(path='images/orus.png') }}" alt="Orus Logo">
+                    <span>Orus</span>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ get_url(path='install/') }}">Install</a></li>
+                    <li><a href="{{ get_url(path='learn/') }}">Learn</a></li>
+                    <li><a href="{{ get_url(path='documentation/') }}">Docs</a></li>
+                    <li><a href="{{ get_url(path='playground/') }}">Playground</a></li>
+                    <li><a href="{{ get_url(path='blog/') }}">Blog</a></li>
+                    <li><a href="{{ get_url(path='community/') }}">Community</a></li>
+                </ul>
+            </nav>
+            <div class="tools">
+                <a href="https://github.com/orus-lang/orus" class="github-link">
+                    <img src="{{ get_url(path='images/github-logo.svg') }}" alt="GitHub">
+                </a>
+                <button class="search-button">
+                    <img src="{{ get_url(path='images/search.svg') }}" alt="Search">
+                </button>
+            </div>
+        </div>
+    </header>
+    <main style="width: 100%;">
+        {% block content %}{% endblock content %}
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="{{ get_url(path='learn/') }}">Getting Started</a></li>
+                        <li><a href="{{ get_url(path='documentation/') }}">Documentation</a></li>
+                        <li><a href="{{ get_url(path='playground/') }}">Playground</a></li>
+                        <li><a href="{{ get_url(path='blog/') }}">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Community</h3>
+                    <ul>
+                        <li><a href="https://github.com/orus-lang/orus">GitHub</a></li>
+                        <li><a href="https://discord.gg/oruslang">Discord</a></li>
+                        <li><a href="https://twitter.com/oruslang">Twitter</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Policies</h3>
+                    <ul>
+                        <li><a href="{{ get_url(path='policies/code-of-conduct/') }}">Code of Conduct</a></li>
+                        <li><a href="{{ get_url(path='policies/privacy/') }}">Privacy Policy</a></li>
+                        <li><a href="{{ get_url(path='policies/security/') }}">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{ now() | date(format="%Y") }} The Orus Language Project</p>
+                <p>Orus is an open source project.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ get_url(path='js/main.js') }}"></script>
+    <script src="{{ get_url(path='js/prism-orus.js') }}"></script>
+    {% block scripts %}{% endblock scripts %}
+</body>
+</html>
