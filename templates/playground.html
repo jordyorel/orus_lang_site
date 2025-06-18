@@ -1,12 +1,13 @@
 {% extends "base.html" %}
 
-{% block title %}Orus Playground | {{ config.title }}{% endblock title %}
-{% block description %}Try Orus programming language in your browser with the online playground{% endblock description %}
+{% block title %}Playground | {{ config.title }}{% endblock title %}
+{% block description %}Try Orus programming language in your browser{% endblock description %}
 
 {% block extra_head %}
 <link rel="stylesheet" href="{{ get_url(path='css/playground.css') }}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.3/codemirror.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.3/theme/dracula.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 {% endblock extra_head %}
 
 {% block content %}
@@ -14,54 +15,39 @@
     <header class="playground-header">
         <div class="playground-title">
             <h1>Orus Playground</h1>
-            <p>Try Orus code directly in your browser</p>
+            <p>Try Orus directly in your browser</p>
         </div>
         <div class="playground-actions">
-            <button id="run-button" class="action-button primary">
-                <i class="fas fa-play"></i> Run
+            <button id="build-button" class="action-button success">
+                <i class="fas fa-play"></i> BUILD
             </button>
-            <button id="share-button" class="action-button">
-                <i class="fas fa-share-alt"></i> Share
-            </button>
-            <div class="dropdown">
-                <button id="examples-button" class="action-button">
-                    <i class="fas fa-book"></i> Examples
-                </button>
-                <div class="dropdown-content" id="examples-dropdown">
-                    <a href="#" data-example="hello-world">Hello World</a>
-                    <a href="#" data-example="fibonacci">Fibonacci</a>
-                    <a href="#" data-example="structs">Structs</a>
-                    <a href="#" data-example="pattern-matching">Pattern Matching</a>
-                    <a href="#" data-example="error-handling">Error Handling</a>
-                </div>
+            <div class="select-wrapper">
+                <select id="build-mode">
+                    <option value="debug">DEBUG</option>
+                    <option value="stable">STABLE</option>
+                </select>
             </div>
-            <button id="format-button" class="action-button">
-                <i class="fas fa-indent"></i> Format
+            <button id="share-button" class="action-button">
+                <i class="fas fa-share-alt"></i> SHARE
+            </button>
+            <button id="config-button" class="action-button">
+                <i class="fas fa-cog"></i> CONFIG
             </button>
         </div>
     </header>
-    
     <div class="playground-main">
+        <div class="toolbar">
+            <button id="tools-button" class="action-button">
+                <i class="fas fa-tools"></i> TOOLS
+            </button>
+        </div>
         <div class="editor-container">
-            <div id="code-editor"></div>
+            <div id="playground-editor"></div>
         </div>
-        <div class="result-container">
-            <div class="result-header">
-                <h3>Output</h3>
-                <button id="clear-output" class="small-button">Clear</button>
-            </div>
-            <div id="output" class="output"></div>
-        </div>
-    </div>
-    
-    <div id="share-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h3>Share Your Code</h3>
-            <p>Copy this URL to share your code:</p>
-            <div class="share-url-container">
-                <input type="text" id="share-url" readonly>
-                <button id="copy-url" class="action-button">Copy</button>
+        <div class="result-container" id="result-panel">
+            <div class="result-output" id="result-output">
+                <!-- Results will appear here after running code -->
+                <pre>Run your code with the BUILD button to see results here.</pre>
             </div>
         </div>
     </div>

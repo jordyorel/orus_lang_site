@@ -27,6 +27,9 @@ taxonomies = [
 highlight_code = true
 highlight_theme = "dracula"
 
+# Remove extra syntaxes that's causing issues
+# extra_syntaxes_and_themes = ["syntaxes"]
+
 # Allow to include the syntax highlight CSS code in the HTML pages
 highlight_css_inlined = false
 

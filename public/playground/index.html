@@ -3,12 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Orus Programming Language</title>
-    <meta name="description" content="Orus is a modern programming language focused on performance, reliability, and developer productivity.">
+    <title>Playground | The Orus Programming Language</title>
+    <meta name="description" content="Try Orus programming language in your browser">
     <link rel="stylesheet" href="https://orus-lang.org/css/main.css">
     <link rel="stylesheet" href="https://orus-lang.org/css/syntax-highlighting.css">
+    <link rel="stylesheet" href="https://orus-lang.org/css/orus-syntax.css">
     <link rel="icon" type="image/png" href="https://orus-lang.org/images/favicon.png">
     
+<link rel="stylesheet" href="https://orus-lang.org/css/playground.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.3/codemirror.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.3/theme/dracula.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 </head>
 <body>
     <header>
@@ -25,6 +31,7 @@
                     <li><a href="https://orus-lang.org/learn">Learn</a></li>
                     <li><a href="https://orus-lang.org/documentation">Docs</a></li>
                     <li><a href="https://orus-lang.org/playground">Playground</a></li>
+                    <li><a href="https://orus-lang.org/pad">OrusPad</a></li>
                     <li><a href="https://orus-lang.org/blog">Blog</a></li>
                     <li><a href="https://orus-lang.org/community">Community</a></li>
                 </ul>
@@ -41,33 +48,44 @@
     </header>
     <main style="width: 100%;">
         
-<div class="page-container">
-    <div class="container">
-        <div class="page-content">
-            <h1 id="online-playground">Online Playground</h1>
-<p>The Orus online playground allows you to write and run Orus code directly in your browser without installing anything on your system. It's perfect for quickly testing features or sharing code snippets with others.</p>
-<h2 id="features">Features</h2>
-<ul>
-<li><strong>Code Editor</strong> with syntax highlighting specifically for Orus</li>
-<li><strong>Instant Execution</strong> of your Orus code in a sandboxed environment</li>
-<li><strong>Example Library</strong> with code samples demonstrating key Orus features</li>
-<li><strong>Shareable URLs</strong> to easily send your code to others</li>
-<li><strong>Code Formatting</strong> to keep your code clean and consistent</li>
-</ul>
-<h2 id="getting-started">Getting Started</h2>
-<ol>
-<li>Visit the <a href="/playground">playground</a></li>
-<li>Choose an example from the dropdown or write your own code</li>
-<li>Click the "Run" button to see your code in action</li>
-<li>Use the "Share" feature to generate a URL with your code</li>
-</ol>
-<h2 id="limitations">Limitations</h2>
-<p>The online playground provides a simplified execution environment for educational purposes. For more complex projects or production use, we recommend <a href="/install">installing Orus</a> on your local machine.</p>
-<div class="cta-container">
-  <a href="/playground" class="button-primary">Try the Playground</a>
-  <a href="/tutorial" class="button-secondary">View Tutorials</a>
-</div>
-
+<div class="playground-container">
+    <header class="playground-header">
+        <div class="playground-title">
+            <h1>Orus Playground</h1>
+            <p>Try Orus directly in your browser</p>
+        </div>
+        <div class="playground-actions">
+            <button id="build-button" class="action-button success">
+                <i class="fas fa-play"></i> BUILD
+            </button>
+            <div class="select-wrapper">
+                <select id="build-mode">
+                    <option value="debug">DEBUG</option>
+                    <option value="stable">STABLE</option>
+                </select>
+            </div>
+            <button id="share-button" class="action-button">
+                <i class="fas fa-share-alt"></i> SHARE
+            </button>
+            <button id="config-button" class="action-button">
+                <i class="fas fa-cog"></i> CONFIG
+            </button>
+        </div>
+    </header>
+    <div class="playground-main">
+        <div class="toolbar">
+            <button id="tools-button" class="action-button">
+                <i class="fas fa-tools"></i> TOOLS
+            </button>
+        </div>
+        <div class="editor-container">
+            <div id="playground-editor"></div>
+        </div>
+        <div class="result-container" id="result-panel">
+            <div class="result-output" id="result-output">
+                <!-- Results will appear here after running code -->
+                <pre>Run your code with the BUILD button to see results here.</pre>
+            </div>
         </div>
     </div>
 </div>
@@ -81,7 +99,6 @@
                     <ul>
                         <li><a href="https://orus-lang.org/learn">Getting Started</a></li>
                         <li><a href="https://orus-lang.org/documentation">Documentation</a></li>
-                        <li><a href="https://orus-lang.org/playground">Playground</a></li>
                         <li><a href="https://orus-lang.org/blog">Blog</a></li>
                     </ul>
                 </div>
@@ -111,6 +128,14 @@
 
     <script src="https://orus-lang.org/js/main.js"></script>
     <script src="https://orus-lang.org/js/prism-orus.js"></script>
+    <script src="https://orus-lang.org/js/orus-syntax.js"></script>
     
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.3/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.3/mode/clike/clike.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.3/addon/edit/closebrackets.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.3/addon/edit/matchbrackets.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+<script src="https://orus-lang.org/js/playground.js"></script>
+
 </body>
 </html>

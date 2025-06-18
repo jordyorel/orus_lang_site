@@ -14,10 +14,6 @@ Welcome to the Orus learning materials. Whether you're new to programming or com
         <h3>Full Orus Tutorial</h3>
         <p>A comprehensive step-by-step guide to learning Orus from the basics to advanced concepts</p>
     </a>
-    <a href="/playground/" class="learn-card">
-        <h3>Online Playground</h3>
-        <p>Try Orus in your browser without installing anything, with live code execution and examples</p>
-    </a>
 </div>
 
 ## First Steps with Orus

@@ -7,6 +7,7 @@
     <meta name="description" content="{% block description %}{{ config.description }}{% endblock description %}">
     <link rel="stylesheet" href="{{ get_url(path='css/main.css') }}">
     <link rel="stylesheet" href="{{ get_url(path='css/syntax-highlighting.css') }}">
+    <link rel="stylesheet" href="{{ get_url(path='css/orus-syntax.css') }}">
     <link rel="icon" type="image/png" href="{{ get_url(path='images/favicon.png') }}">
     {% block extra_head %}{% endblock extra_head %}
 </head>
@@ -25,7 +26,7 @@
                     <li><a href="{{ get_url(path='learn/') }}">Learn</a></li>
                     <li><a href="{{ get_url(path='documentation/') }}">Docs</a></li>
                     <li><a href="{{ get_url(path='playground/') }}">Playground</a></li>
-                    <li><a href="{{ get_url(path='pad/') }}">Pad</a></li>
+                    <li><a href="{{ get_url(path='pad/') }}">OrusPad</a></li>
                     <li><a href="{{ get_url(path='blog/') }}">Blog</a></li>
                     <li><a href="{{ get_url(path='community/') }}">Community</a></li>
                 </ul>
@@ -51,8 +52,6 @@
                     <ul>
                         <li><a href="{{ get_url(path='learn/') }}">Getting Started</a></li>
                         <li><a href="{{ get_url(path='documentation/') }}">Documentation</a></li>
-                        <li><a href="{{ get_url(path='playground/') }}">Playground</a></li>
-                        <li><a href="{{ get_url(path='pad/') }}">Pad</a></li>
                         <li><a href="{{ get_url(path='blog/') }}">Blog</a></li>
                     </ul>
                 </div>
@@ -82,6 +81,7 @@
 
     <script src="{{ get_url(path='js/main.js') }}"></script>
     <script src="{{ get_url(path='js/prism-orus.js') }}"></script>
+    <script src="{{ get_url(path='js/orus-syntax.js') }}"></script>
     {% block scripts %}{% endblock scripts %}
 </body>
 </html>

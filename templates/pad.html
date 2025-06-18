@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="{{ get_url(path='css/playground.css') }}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.3/codemirror.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.3/theme/dracula.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 {% endblock extra_head %}
 
 {% block content %}
@@ -17,14 +18,39 @@
             <p>Real-time collaborative playground</p>
         </div>
         <div class="playground-actions">
+            <button id="build-button" class="action-button success">
+                <i class="fas fa-play"></i> BUILD
+            </button>
+            <div class="select-wrapper">
+                <select id="build-mode">
+                    <option value="debug">DEBUG</option>
+                    <option value="stable">STABLE</option>
+                </select>
+            </div>
+            <button id="share-button" class="action-button">
+                <i class="fas fa-share-alt"></i> SHARE
+            </button>
             <button id="collaborate-button" class="action-button primary">
                 <i class="fas fa-users"></i> Start Session
             </button>
         </div>
     </header>
     <div class="playground-main">
+        <div class="toolbar">
+            <button id="tools-button" class="action-button">
+                <i class="fas fa-tools"></i> TOOLS
+            </button>
+            <button id="config-button" class="action-button">
+                <i class="fas fa-cog"></i> CONFIG
+            </button>
+        </div>
         <div class="editor-container">
             <div id="pad-editor"></div>
+        </div>
+        <div class="result-container" id="result-panel">
+            <div class="result-output" id="result-output">
+                <pre>Run your code with the BUILD button to see results here.</pre>
+            </div>
         </div>
     </div>
 </div>

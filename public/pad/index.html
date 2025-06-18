@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Orus Programming Language</title>
-    <meta name="description" content="Orus is a modern programming language focused on performance, reliability, and developer productivity.">
+    <title>OrusPad | The Orus Programming Language</title>
+    <meta name="description" content="Collaborative editor inspired by Rustpad">
     <link rel="stylesheet" href="https://orus-lang.org/css/main.css">
     <link rel="stylesheet" href="https://orus-lang.org/css/syntax-highlighting.css">
     <link rel="stylesheet" href="https://orus-lang.org/css/orus-syntax.css">
     <link rel="icon" type="image/png" href="https://orus-lang.org/images/favicon.png">
     
-<link rel="stylesheet" href="https://orus-lang.org/css/blog-post.css">
+<link rel="stylesheet" href="https://orus-lang.org/css/playground.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.3/codemirror.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.3/theme/dracula.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 </head>
 <body>
@@ -45,78 +48,45 @@
     </header>
     <main style="width: 100%;">
         
-<div class="page-container">
-    <div class="container">
-        <div class="blog-post">
-            <h1>Announcing Orus 0.1.0</h1>
-            <div class="post-meta">
-                <span class="post-date">June 15, 2025</span>
-                
-                <div class="post-tags">
-                    
-                    <span class="tag">announcement</span>
-                    
-                    <span class="tag">release</span>
-                    
-                </div>
-                
+<div class="playground-container">
+    <header class="playground-header">
+        <div class="playground-title">
+            <h1>OrusPad</h1>
+            <p>Real-time collaborative playground</p>
+        </div>
+        <div class="playground-actions">
+            <button id="build-button" class="action-button success">
+                <i class="fas fa-play"></i> BUILD
+            </button>
+            <div class="select-wrapper">
+                <select id="build-mode">
+                    <option value="debug">DEBUG</option>
+                    <option value="stable">STABLE</option>
+                </select>
             </div>
-            <div class="post-content">
-                <h1 id="announcing-orus-0-1-0">Announcing Orus 0.1.0</h1>
-<p>We're excited to announce the first public release of the Orus programming language! After months of development, Orus 0.1.0 is now available for developers to try out.</p>
-<h2 id="what-is-orus">What is Orus?</h2>
-<p>Orus is a modern programming language designed with three primary goals:</p>
-<ol>
-<li><strong>Performance</strong>: Orus is designed for speed, with a focus on efficient compilation and runtime performance.</li>
-<li><strong>Reliability</strong>: Strong typing, memory safety without garbage collection, and a clear error handling system.</li>
-<li><strong>Developer Productivity</strong>: Expressive syntax, powerful abstractions, and excellent tooling.</li>
-</ol>
-<h2 id="key-features-in-0-1-0">Key Features in 0.1.0</h2>
-<ul>
-<li>Core language syntax and semantics</li>
-<li>Basic standard library</li>
-<li>Compiler with helpful error messages</li>
-<li>Simple build system</li>
-<li>Documentation and getting started guides</li>
-</ul>
-<h2 id="example">Example</h2>
-<p>Here's a simple example of Orus code:</p>
-<pre data-lang="orus" style="background-color:#282a36;color:#f8f8f2;" class="language-orus "><code class="language-orus" data-lang="orus"><span>// A simple function to calculate fibonacci numbers
-</span><span>fn fibonacci(n: u64) -&gt; u64 {
-</span><span>    if n &lt;= 1 {
-</span><span>        return n;
-</span><span>    }
-</span><span>    return fibonacci(n - 1) + fibonacci(n - 2);
-</span><span>}
-</span><span>
-</span><span>fn main() {
-</span><span>    // Calculate and print the first 10 fibonacci numbers
-</span><span>    for i in 0..10 {
-</span><span>        println(&quot;fibonacci({}) = {}&quot;, i, fibonacci(i));
-</span><span>    }
-</span><span>}
-</span></code></pre>
-<h2 id="getting-started">Getting Started</h2>
-<p>To try Orus today, visit our <a href="/install/">installation page</a> for instructions on getting set up, then check out the <a href="/learn/">learn section</a> for tutorials and examples.</p>
-<h2 id="looking-ahead">Looking Ahead</h2>
-<p>This is just the beginning for Orus. Our roadmap for upcoming releases includes:</p>
-<ul>
-<li>Advanced concurrency features</li>
-<li>Improved package management</li>
-<li>More comprehensive standard library</li>
-<li>IDE integration and debugging tools</li>
-<li>Performance optimizations</li>
-</ul>
-<h2 id="join-the-community">Join the Community</h2>
-<p>We're building Orus in the open and welcome contributions from everyone. Join us on <a href="https://github.com/orus-lang/orus">GitHub</a>, <a href="https://discord.gg/oruslang">Discord</a>, or <a href="https://twitter.com/oruslang">Twitter</a> to get involved.</p>
-<p>We can't wait to see what you'll build with Orus!</p>
-
-            </div>
-            
-            <div class="post-navigation">
-                
-                
-                
+            <button id="share-button" class="action-button">
+                <i class="fas fa-share-alt"></i> SHARE
+            </button>
+            <button id="collaborate-button" class="action-button primary">
+                <i class="fas fa-users"></i> Start Session
+            </button>
+        </div>
+    </header>
+    <div class="playground-main">
+        <div class="toolbar">
+            <button id="tools-button" class="action-button">
+                <i class="fas fa-tools"></i> TOOLS
+            </button>
+            <button id="config-button" class="action-button">
+                <i class="fas fa-cog"></i> CONFIG
+            </button>
+        </div>
+        <div class="editor-container">
+            <div id="pad-editor"></div>
+        </div>
+        <div class="result-container" id="result-panel">
+            <div class="result-output" id="result-output">
+                <pre>Run your code with the BUILD button to see results here.</pre>
             </div>
         </div>
     </div>
@@ -162,5 +132,13 @@
     <script src="https://orus-lang.org/js/prism-orus.js"></script>
     <script src="https://orus-lang.org/js/orus-syntax.js"></script>
     
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.3/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.3/mode/clike/clike.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.3/addon/edit/closebrackets.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.3/addon/edit/matchbrackets.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+<script src="https://orus-lang.org/js/togetherjs.js"></script>
+<script src="https://orus-lang.org/js/oruspad.js"></script>
+
 </body>
 </html>

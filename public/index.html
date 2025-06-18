@@ -7,6 +7,7 @@
     <meta name="description" content="Orus is a modern programming language focused on performance, reliability, and developer productivity.">
     <link rel="stylesheet" href="https://orus-lang.org/css/main.css">
     <link rel="stylesheet" href="https://orus-lang.org/css/syntax-highlighting.css">
+    <link rel="stylesheet" href="https://orus-lang.org/css/orus-syntax.css">
     <link rel="icon" type="image/png" href="https://orus-lang.org/images/favicon.png">
     
 <link rel="stylesheet" href="https://orus-lang.org/css/index.css">
@@ -27,6 +28,7 @@
                     <li><a href="https://orus-lang.org/learn">Learn</a></li>
                     <li><a href="https://orus-lang.org/documentation">Docs</a></li>
                     <li><a href="https://orus-lang.org/playground">Playground</a></li>
+                    <li><a href="https://orus-lang.org/pad">OrusPad</a></li>
                     <li><a href="https://orus-lang.org/blog">Blog</a></li>
                     <li><a href="https://orus-lang.org/community">Community</a></li>
                 </ul>
@@ -51,25 +53,26 @@
             
             <div class="cta-buttons">
                 <a href="https://orus-lang.org/install" class="button primary">Get Started</a>
-                <a href="https://orus-lang.org/playground" class="button secondary">Try Online</a>
                 <a href="https://orus-lang.org/learn" class="button secondary">Learn</a>
             </div>
-        </div>            <div class="hero-code">
-                <div class="code-header">
-                    <span class="filename">hello_world.orus</span>
-                    <div class="code-actions">
-                        <button class="copy-button">Copy</button>
-                        <a href="https://orus-lang.org/playground" class="run-button">Run</a>
-                    </div>
+        </div>
+        
+        <div class="hero-code">
+            <div class="code-header">
+                <span class="filename">hello_world.orus</span>
+                <div class="code-actions">
+                    <button class="copy-button">Copy</button>
+                    <button class="run-button">Run</button>
                 </div>
-                <pre><code class="language-orus">fn hello_world() -> String {
+            </div>
+            <pre><code class="language-orus">fn hello_world() -> String {
     "Hello, Orus World!"
 }
 
 fn main() {
     println(hello_world());
 }</code></pre>
-            </div>
+        </div>
     </div>
 </section>
 
@@ -176,7 +179,6 @@ cd my-project</code></pre>
                     <ul>
                         <li><a href="https://orus-lang.org/learn">Getting Started</a></li>
                         <li><a href="https://orus-lang.org/documentation">Documentation</a></li>
-                        <li><a href="https://orus-lang.org/playground">Playground</a></li>
                         <li><a href="https://orus-lang.org/blog">Blog</a></li>
                     </ul>
                 </div>
@@ -206,6 +208,7 @@ cd my-project</code></pre>
 
     <script src="https://orus-lang.org/js/main.js"></script>
     <script src="https://orus-lang.org/js/prism-orus.js"></script>
+    <script src="https://orus-lang.org/js/orus-syntax.js"></script>
     
 <script>
     // Code to handle the copy button functionality
