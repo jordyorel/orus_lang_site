@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Orus Programming Language</title>
+    <meta name="description" content="Orus is a modern programming language focused on performance, reliability, and developer productivity.">
+    <link rel="stylesheet" href="https://orus-lang.org/css/main.css">
+    <link rel="stylesheet" href="https://orus-lang.org/css/syntax-highlighting.css">
+    <link rel="stylesheet" href="https://orus-lang.org/css/orus-syntax.css">
+    <link rel="icon" type="image/png" href="https://orus-lang.org/images/favicon.png">
+    
+<link rel="stylesheet" href="https://orus-lang.org/css/learn.css">
+<link rel="stylesheet" href="https://orus-lang.org/css/tutorial.css">
+<link rel="stylesheet" href="https://orus-lang.org/css/tutorial-sidebar.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="https:&#x2F;&#x2F;orus-lang.org">
+                    <img src="https://orus-lang.org/images/orus.png" alt="Orus Logo">
+                    <span>Orus</span>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="https://orus-lang.org/install">Install</a></li>
+                    <li><a href="https://orus-lang.org/learn">Learn</a></li>
+                    <li><a href="https://orus-lang.org/documentation">Docs</a></li>
+                    <li><a href="https://orus-lang.org/playground">Playground</a></li>
+                    <li><a href="https://orus-lang.org/pad">OrusPad</a></li>
+                    <li><a href="https://orus-lang.org/blog">Blog</a></li>
+                    <li><a href="https://orus-lang.org/community">Community</a></li>
+                </ul>
+            </nav>
+            <div class="tools">
+                <a href="https://github.com/orus-lang/orus" class="github-link">
+                    <img src="https://orus-lang.org/images/github-logo.svg" alt="GitHub">
+                </a>
+                <button class="search-button">
+                    <img src="https://orus-lang.org/images/search.svg" alt="Search">
+                </button>
+            </div>
+        </div>
+    </header>
+    <main style="width: 100%;">
+        
+<!-- Left sidebar navigation -->
+<div class="sidebar">
+    <!-- Resize handle -->
+    <div class="sidebar-resize-handle"></div>
+    
+    <div class="sidebar-content">
+        <div class="sidebar-section">
+            <div class="sidebar-title">Tutorial</div>
+            <ul class="sidebar-nav">
+                
+                <li><a href="https:&#x2F;&#x2F;orus-lang.org&#x2F;tutorial&#x2F;hello-world&#x2F;">Hello World</a></li>
+                
+                <li><a href="https:&#x2F;&#x2F;orus-lang.org&#x2F;tutorial&#x2F;variables-and-types&#x2F;">Variables and Types</a></li>
+                
+                <li><a href="https:&#x2F;&#x2F;orus-lang.org&#x2F;tutorial&#x2F;control-flow&#x2F;">Control Flow</a></li>
+                
+                <li><a href="https:&#x2F;&#x2F;orus-lang.org&#x2F;tutorial&#x2F;functions&#x2F;">Functions</a></li>
+                
+                <li><a href="https:&#x2F;&#x2F;orus-lang.org&#x2F;tutorial&#x2F;structs&#x2F;">Structs</a></li>
+                
+                <li><a href="https:&#x2F;&#x2F;orus-lang.org&#x2F;tutorial&#x2F;modules-and-imports&#x2F;">Modules and Imports</a></li>
+                
+                <li><a href="https:&#x2F;&#x2F;orus-lang.org&#x2F;tutorial&#x2F;generics&#x2F;">Generics</a></li>
+                
+                <li><a href="https:&#x2F;&#x2F;orus-lang.org&#x2F;tutorial&#x2F;pattern-matching&#x2F;">Pattern Matching</a></li>
+                
+                <li><a href="https:&#x2F;&#x2F;orus-lang.org&#x2F;tutorial&#x2F;error-handling&#x2F;">Error Handling</a></li>
+                
+                <li><a href="https:&#x2F;&#x2F;orus-lang.org&#x2F;tutorial&#x2F;built-in-helpers&#x2F;">Built-in Helpers</a></li>
+                
+                <li><a href="https:&#x2F;&#x2F;orus-lang.org&#x2F;tutorial&#x2F;creating-a-project&#x2F;">Creating a Project</a></li>
+                
+            </ul>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-title">References</div>
+            <ul class="sidebar-nav">
+                <li><a href="/documentation/">API Documentation</a></li>
+                <li><a href="/learn/">Learning Resources</a></li>
+                <li><a href="/community/">Get Help</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Mobile sidebar toggle button/hamburger menu -->
+<button class="sidebar-toggle" title="Toggle navigation menu">
+    <i class="fas fa-bars"></i>
+</button>
+
+<!-- Main content with sidebar -->
+<div class="main-with-sidebar">
+    <div class="page-container tutorial-page">
+        <div class="container">
+            <div class="page-content tutorial-content">
+                <h1 id="orus-tutorial">Orus Tutorial</h1>
+<p>This tutorial teaches the Orus language step by step. Each section shows multiple approaches to the same concept so you can choose the style that fits your project.</p>
+<h2 id="sections">Sections</h2>
+<ul>
+<li><a href="/tutorial/hello-world/">Hello World</a></li>
+<li><a href="/tutorial/variables-and-types/">Variables and Types</a></li>
+<li><a href="/tutorial/control-flow/">Control Flow</a></li>
+<li><a href="/tutorial/functions/">Functions</a></li>
+<li><a href="/tutorial/structs/">Structs</a></li>
+<li><a href="/tutorial/modules-and-imports/">Modules and Imports</a></li>
+<li><a href="/tutorial/generics/">Generics</a></li>
+<li><a href="/tutorial/pattern-matching/">Pattern Matching</a></li>
+<li><a href="/tutorial/error-handling/">Error Handling</a></li>
+<li><a href="/tutorial/built-in-helpers/">Built-in Helpers</a></li>
+<li><a href="/tutorial/creating-a-project/">Creating a Project</a></li>
+</ul>
+
+                
+                <div class="tutorial-sections">
+                    
+                    <a href="https:&#x2F;&#x2F;orus-lang.org&#x2F;tutorial&#x2F;hello-world&#x2F;" class="tutorial-section-link">
+                        <span class="number">1</span>
+                        <span>Hello World</span>
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;orus-lang.org&#x2F;tutorial&#x2F;variables-and-types&#x2F;" class="tutorial-section-link">
+                        <span class="number">2</span>
+                        <span>Variables and Types</span>
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;orus-lang.org&#x2F;tutorial&#x2F;control-flow&#x2F;" class="tutorial-section-link">
+                        <span class="number">3</span>
+                        <span>Control Flow</span>
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;orus-lang.org&#x2F;tutorial&#x2F;functions&#x2F;" class="tutorial-section-link">
+                        <span class="number">4</span>
+                        <span>Functions</span>
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;orus-lang.org&#x2F;tutorial&#x2F;structs&#x2F;" class="tutorial-section-link">
+                        <span class="number">5</span>
+                        <span>Structs</span>
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;orus-lang.org&#x2F;tutorial&#x2F;modules-and-imports&#x2F;" class="tutorial-section-link">
+                        <span class="number">6</span>
+                        <span>Modules and Imports</span>
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;orus-lang.org&#x2F;tutorial&#x2F;generics&#x2F;" class="tutorial-section-link">
+                        <span class="number">7</span>
+                        <span>Generics</span>
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;orus-lang.org&#x2F;tutorial&#x2F;pattern-matching&#x2F;" class="tutorial-section-link">
+                        <span class="number">8</span>
+                        <span>Pattern Matching</span>
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;orus-lang.org&#x2F;tutorial&#x2F;error-handling&#x2F;" class="tutorial-section-link">
+                        <span class="number">9</span>
+                        <span>Error Handling</span>
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;orus-lang.org&#x2F;tutorial&#x2F;built-in-helpers&#x2F;" class="tutorial-section-link">
+                        <span class="number">10</span>
+                        <span>Built-in Helpers</span>
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;orus-lang.org&#x2F;tutorial&#x2F;creating-a-project&#x2F;" class="tutorial-section-link">
+                        <span class="number">11</span>
+                        <span>Creating a Project</span>
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://orus-lang.org/js/tutorial-sidebar.js"></script>
+
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="https://orus-lang.org/learn">Getting Started</a></li>
+                        <li><a href="https://orus-lang.org/documentation">Documentation</a></li>
+                        <li><a href="https://orus-lang.org/blog">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Community</h3>
+                    <ul>
+                        <li><a href="https://github.com/orus-lang/orus">GitHub</a></li>
+                        <li><a href="https://discord.gg/oruslang">Discord</a></li>
+                        <li><a href="https://twitter.com/oruslang">Twitter</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Policies</h3>
+                    <ul>
+                        <li><a href="https://orus-lang.org/policies/code-of-conduct">Code of Conduct</a></li>
+                        <li><a href="https://orus-lang.org/policies/privacy">Privacy Policy</a></li>
+                        <li><a href="https://orus-lang.org/policies/security">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 The Orus Language Project</p>
+                <p>Orus is an open source project.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://orus-lang.org/js/main.js"></script>
+    <script src="https://orus-lang.org/js/prism-orus.js"></script>
+    <script src="https://orus-lang.org/js/orus-syntax.js"></script>
+    
+</body>
+</html>
