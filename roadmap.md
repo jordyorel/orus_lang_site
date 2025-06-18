@@ -110,13 +110,6 @@ orus-lang.org/
 * **Search**: Add Pagefind or Lunr.js for client-side docs search
 * **Dark/light mode toggle**: Tailwind-based toggle switch
 * **Accessibility & SEO**: semantic HTML, contrast ratios, Open Graph tags
-* **Meta data**: dynamic title, description, favicon, social preview
-
----
-
-## 🧠 Prompt for AI (site generation)
-
-> "Generate a Rust-style website layout using Astro and Tailwind CSS, themed in dark gold and charcoal. Create pages for `/`, `/install`, `/docs`, `/play`, and `/roadmap`, with a Monaco code editor on the `/play` page. Use Inter and Fira Code fonts. Add a collapsible sidebar for the documentation section. Design the homepage to showcase a logo, a hero tagline, a hello world snippet, and Orus language features."
 
 ---
 
