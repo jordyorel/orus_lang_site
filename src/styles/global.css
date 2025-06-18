@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-charcoal text-gold font-inter;
+}
+pre, code {
+  @apply font-code;
+}

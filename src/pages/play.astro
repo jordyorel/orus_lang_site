@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Playground">
+  <main class="p-8">
+    <h1 class="text-3xl font-semibold mb-4">Playground</h1>
+    <div id="editor" class="h-96 border border-gold"></div>
+    <script type="module">
+      import * as monaco from 'monaco-editor';
+      const editor = monaco.editor.create(document.getElementById('editor'), {
+        value: 'fn main() {\n    print("Hello, Orus!")\n}',
+        language: 'rust',
+        theme: 'vs-dark',
+        fontFamily: 'Fira Code',
+      });
+    </script>
+  </main>
+</BaseLayout>
